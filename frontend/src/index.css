@@ -1,0 +1,10 @@
+@import "tailwindcss";
+
+@theme{
+  --font-Text-Nav: "Josefin Sans", sans-serif;
+  --font-Logo-Nav: "Alkatra", system-ui;
+  --font-Login-text: "Quintessential", serif;
+  --font-HomePage-text: "Funnel Display", sans-serif;
+  --font-submitted-recipes: "Titan One", sans-serif;
+  --font-detailed-recipe: "Bungee", cursive;
+}
