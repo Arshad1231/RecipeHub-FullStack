@@ -16,7 +16,7 @@ function App() {
 
   return (
     <>
-      
+      <div className='bg-pages'>
       <Nav/>  
       <Routes>
         <Route path="/" element={<HomePage/>}/>
@@ -30,6 +30,8 @@ function App() {
 
         <Route path="*" element={<ErrorPage/>}/>
       </Routes>
+      </div>
+      
     </>
   )
 }

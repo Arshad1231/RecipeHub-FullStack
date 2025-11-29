@@ -71,22 +71,15 @@ const AddPage = () => {
   formData.append('RecipeRating', RecipeRating);
   formData.append('RecipeType', RecipeType);
   formData.append('userID', userID);
-  formData.append('RecipeIngredients', JSON.stringify(RecipeIngredients));
-  formData.append('RecipeInstructions', JSON.stringify(RecipeInstructions));
-
-  console.log("FormData entries:");
-  for (let pair of formData.entries()) {
-    console.log(pair[0], pair[1]);
-  }
-
+  RecipeIngredients.forEach((item) => formData.append('RecipeIngredients', item));
+  RecipeInstructions.forEach((step) => formData.append('RecipeInstructions', step));
+  
   try {
     const response = await PostRecipe(formData);
     console.log("Server response:", response);
   } catch (err) {
     console.log("Error posting recipe:", err);
-  }
-
-    
+  }   
     // Reset form
     setRecipeName('')
     setRecipeAuthor('')
@@ -100,14 +93,14 @@ const AddPage = () => {
   }
 
   return (
-    <div className="flex flex-col lg:flex-row gap-8 p-6 bg-[#F0F5F0] min-h-screen">
+    <div className="flex flex-col font-Login-text lg:flex-row gap-8 p-6 bg-[#F0F5F0] min-h-screen">
       <div className="lg:w-1/3 flex-shrink-0">
         <RecipeSection ProfileDetails={ProfileDetails} />
       </div>
 
-      <div className="lg:w-2/3 w-full bg-red-300 p-8 rounded-3xl shadow-lg overflow-auto">
-        <h1 className="text-4xl font-semibold text-center underline italic mb-8 text-white flex items-center justify-center gap-3">
-          <FaUtensils className="inline mb-1" /> Add a Recipe
+      <div className="lg:w-2/3 w-full bg-red-400 p-8 rounded-3xl shadow-lg overflow-auto">
+        <h1 className="text-7xl font-submitted-recipes text-center underline mb-8 text-white flex items-center justify-center gap-3">
+           Add a Recipe
         </h1>
 
         <form onSubmit={HandleRecipeAdd} className="space-y-6" encType="multipart/form-data">
@@ -190,6 +183,7 @@ const AddPage = () => {
                 onChange={(e) => setRecipeRating(e.target.value)}
                 min="1"
                 max="5"
+                step="0.1"
                 required
               />
             </div>
@@ -202,10 +196,11 @@ const AddPage = () => {
             <input
               type="file"
               name="RecipeImg"
+              className={inputClass}
               id="RecipeImg"
               accept="image/*"
               onChange={(e) => setRecipeImage(e.target.files[0])}
-              className="block w-full text-white"
+              
               required
             />
           </div>
@@ -251,7 +246,7 @@ const AddPage = () => {
                 <FaPlus /> Add
               </button>
             </div>
-            <ul className="list-decimal list-inside mt-2 text-green-800">
+            <ul className="list-decimal list-inside mt-2 text-white font-submitted-recipes">
               {RecipeInstructions.map((step, idx) => (
                 <li key={idx}>{step}</li>
               ))}
@@ -269,16 +264,23 @@ const AddPage = () => {
                 className={inputClass + ' flex-1'}
                 value={RecipeIngredients_item}
                 onChange={(e) => setRecipeIngredients_item(e.target.value)}
+                onKeyDown={(e) => {
+                  if (e.key === 'Enter') {
+                    e.preventDefault(); // Stop form from submitting
+                    HandleRecipeIngredients(e); // Add ingredient
+                  }
+                }}
                 placeholder="Add an ingredient"
               />
               <button
                 onClick={HandleRecipeIngredients}
+                
                 className="bg-green-500 hover:bg-green-600 text-white font-bold px-4 py-2 rounded-md shadow flex items-center gap-2"
               >
                 <FaPlus /> Add
               </button>
             </div>
-            <ul className="list-disc list-inside mt-2 text-green-800">
+            <ul className="list-disc list-inside mt-2 font-submitted-recipes text-white">
               {RecipeIngredients.map((item, idx) => (
                 <li key={idx}>{item}</li>
               ))}

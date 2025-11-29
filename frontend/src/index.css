@@ -7,4 +7,10 @@
   --font-HomePage-text: "Funnel Display", sans-serif;
   --font-submitted-recipes: "Titan One", sans-serif;
   --font-detailed-recipe: "Bungee", cursive;
+
+
+  --bg-pages:  bg-gray-100;
+  --font-nav-logo: "Honk", system-ui;
+  --bg-heading : bg-amber-200;
+
 }

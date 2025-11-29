@@ -24,7 +24,7 @@ const Login = () => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100">
+    <div className="flex flex-col items-center justify-center min-h-screen">
       <div className="flex flex-col md:flex-row w-[95%] md:w-[75%] lg:w-[65%] bg-white rounded-2xl shadow-2xl overflow-hidden transform scale-[1.05] transition-all duration-300">
         <img
           src={HomePagePictures[0]}
@@ -68,7 +68,7 @@ const Login = () => {
             </div>
             <button
               type="submit"
-              className="w-full py-3 bg-blue-500 text-white rounded-lg hover:bg-red-600 transition font-semibold text-lg"
+              className="w-full py-3 bg-red-600  text-white rounded-lg hover:bg-blue-500 transition font-semibold text-lg"
             >
               Login
             </button>

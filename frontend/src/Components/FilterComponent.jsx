@@ -65,7 +65,7 @@ const FilterComponent = ({allRecipes,setAllRecipes,filteredRecipe,setFilteredRec
                 placeholder="Search recipes..."
                 value={query}
                 onChange={handleSearchChange}
-                className="w-full pl-10 pr-4 py-2 border-2 border-amber-300 rounded-full focus:outline-none focus:ring-2 focus:ring-amber-400 transition-all shadow-sm"
+                className="w-full pl-10 pr-4 py-2 border-2 border-red-400 rounded-full focus:outline-none focus:ring-2 focus:ring-amber-400 transition-all shadow-sm"
                 />
             </div>
 
@@ -73,7 +73,7 @@ const FilterComponent = ({allRecipes,setAllRecipes,filteredRecipe,setFilteredRec
                 <button
                     type="button"
                     onClick={HandleDropChange}
-                    className="bg-amber-300 text-white px-4 py-2 rounded-full font-semibold shadow-sm hover:bg-amber-400 transition"
+                    className="bg-red-400 text-white px-4 py-2 rounded-full font-semibold shadow-sm hover:bg-amber-400 transition"
                     >
                     Duration ▼
                 </button>
@@ -105,7 +105,7 @@ const FilterComponent = ({allRecipes,setAllRecipes,filteredRecipe,setFilteredRec
                 <button
                     type="button"
                     onClick={HandleTypeChange}
-                    className=" relative bg-amber-300 text-white px-4 py-2 rounded-full font-semibold shadow-sm hover:bg-amber-400 transition"
+                    className=" relative bg-red-400 text-white px-4 py-2 rounded-full font-semibold shadow-sm hover:bg-amber-400 transition"
                     >
                     Type ▼
                 </button>

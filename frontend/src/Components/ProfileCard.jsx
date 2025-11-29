@@ -37,8 +37,8 @@ const ProfileCard = () => {
             </div>
         </div>
         <div>
-            <h3 className="font-medium text-gray-700 font-Text-Nav text-4xl">
-                {ProfileDetails.FirstName}
+            <h3 className="font-medium text-gray-700 font-Text-Nav text-3xl">
+                {ProfileDetails.FirstName}{ProfileDetails.LastName}
             </h3>
 
             <p className="text-gray-500 text-center font-HomePage-text">Got a recipe to share?</p>
@@ -47,7 +47,6 @@ const ProfileCard = () => {
                 <Link to="/add">Share</Link>
             </button>
         </div>
-      
     </div>
 </>
   )

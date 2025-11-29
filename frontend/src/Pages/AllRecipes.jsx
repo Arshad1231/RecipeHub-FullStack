@@ -3,14 +3,21 @@ import { GetRecipe } from '../../Services/RecipeCRUD'
 import RecipeCard from '../Components/RecipeCard'
 import ProfileCard from '../Components/ProfileCard'
 import FilterComponent from '../Components/FilterComponent'
+import ProfileCardRecipeSection from '../Components/ProfileCardRecipeSection'
+import { getUserDetails } from '../../Services/UserCRUD'
 
 const AllRecipes = () => {
   const [allRecipes, setAllRecipes] = useState([])
   const [filteredRecipe, setFilteredRecipe] = useState([])
+  const [user,setUser] = useState({})
+
 
   useEffect(() => {
     const fetchAllRecipes = async () => {
       const Data = await GetRecipe()
+      const user = await getUserDetails()
+      console.log(user)
+      setUser(user.UserDetails)
       setAllRecipes(Data.Recipes)
       setFilteredRecipe(Data.Recipes)
     }
@@ -22,8 +29,9 @@ const AllRecipes = () => {
       <div className="flex flex-col md:flex-row gap-10">
         
         <div className="md:w-1/4 w-full">
-          <div className="sticky top-8">
+          <div className=" top-8">
             <ProfileCard />
+            <ProfileCardRecipeSection ProfileDetails={user}/>
           </div>
         </div>
         <div className="flex-1">
