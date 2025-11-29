@@ -9,14 +9,13 @@ RecipeHub-FullStack provides a seamless environment where users can:
 - Add new recipes  
 - Edit or delete existing recipes  
 - Browse details of a recipe (ingredients, instructions, etc.)  
-- (Optionally) Expand this project later — e.g. authentication, user profiles, ratings, search, categories  
 
 The project follows a standard full-stack JS architecture: a backend server and a frontend client.  
 
 ## 🧰 Tech Stack  
 
-- **Backend**: Node.js / Express (or similar) for server-side logic and APIs  
-- **Frontend**: JavaScript stack (likely React / plain JS + HTML/CSS) for UI and client-side rendering  
+- **Backend**: Node.js / Express  for server-side logic and APIs  
+- **Frontend**: JavaScript stack ( React / plain JS + HTML/CSS) for UI and client-side rendering  
 - **Other**: Standard web development tools (e.g. npm, package management)  
 
 ## 📝 What’s in the Repo  
@@ -60,7 +59,7 @@ npm start
 
 - CRUD operations for recipes (Create, Read, Update, Delete)  
 - Clean separation between backend and frontend  
-- Easy to extend: you can add features like user authentication, search/filter, recipe categories, UI improvements, external recipe API integration, etc.  
+-
 
 ## 🧑‍💻 Why This Project  
 
@@ -74,3 +73,4 @@ I built this project to practice full-stack JavaScript development and create a 
 - Improve UI/UX (responsive design, recipe images, styling)  
 - Add validations, error handling, security enhancements  
 - Optionally integrate with external recipe APIs for more content  
+
